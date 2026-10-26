@@ -235,18 +235,17 @@ loop_us:
 
 ; tabla de decodificacion de 7 segmentos
     ORG     0x0300
-
 TABLA_7SEG:
-    ADDWF   PCL, F
-    RETLW   0x3F                ; 0: abcdef
-    RETLW   0x06                ; 1: bc
-    RETLW   0x5B                ; 2: abdeg
-    RETLW   0x4F                ; 3: abcdg
-    RETLW   0x66                ; 4: bcfg
-    RETLW   0x6D                ; 5: acdfg
-    RETLW   0x7D                ; 6: acdefg
-    RETLW   0x07                ; 7: abc
-    RETLW   0x7F                ; 8: abcdefg
-    RETLW   0x6F                ; 9: abcdfg
-
+    ADDWF   PCL, F              ; suma el desplazamiento en W al PCL
+    RETLW   0x3F                ; codigo para el 0 (abcdef)
+    RETLW 0x06                  ; codigo para el 1 (bc)
+    RETLW 0x5B                  ; codigo para el 2 (abdeg)
+    RETLW 0x4F                  ; codigo para el 3 (abcdg)
+    RETLW 0x66                  ; codigo para el 4 (bcfg)
+    RETLW 0x6D                  ; codigo para el 5 (acdfg)
+    RETLW 0x7D                  ; codigo para el 6 (acdefg)
+    RETLW 0x07                  ; codigo para el 7 (abc)
+    RETLW 0x7F                  ; codigo para el 8 (abcdefg)
+    RETLW 0x6F                  ; codigo para el 9 (abcdfg)
+                   
     END
