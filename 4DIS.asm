@@ -424,7 +424,7 @@ PULSACION_LARGA:                ; larga -> detiene y pone en cero
 
 ;tabla de decodificacion
         ORG     0x0300
-TABLA_7SEG:                     ;codigos para display de catodo comun
+TABLA_7SEG:                     
         ADDWF   PCL,F           ;suma el desplazamiento en W al PCL
         RETLW   0x3F            ; código para el 0 (abcdef)
         RETLW   0x06            ; código para el 1 (bc)
